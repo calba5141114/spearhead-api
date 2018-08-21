@@ -11,9 +11,19 @@ registerRoutes.get('/',(req,res)=>{
 
 
 registerRoutes.post('/',(req,res)=>{
-    const password = req.query.password;
-    hashed = hash(password);
-    console.log(hashed);
+     let  password = req.query.password;
+     let hashedPassword;
+
+
+    bCrypt.hash(password, 10, (err,hash) => {
+        if(err){
+            res.send({
+            message: err,
+            });
+        }
+        hashedPassword =  hash
+    });
+
     res.send('password sent')
 })
 
