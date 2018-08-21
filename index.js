@@ -4,6 +4,7 @@ const config = require('./config.js');
 const indexRoutes = require('./routes/indexRoutes');
 const bodyParser = require('body-parser');
 const registerRoutes = require('./routes/registerRoutes');
+const mongoose = require('mongoose;');
 
 //needs cross origin header/ mongo.
 

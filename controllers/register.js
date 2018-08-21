@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
 const user = require('../models/user');
 
 
@@ -27,10 +27,6 @@ function saveNewUser(req) {
         }
         hashedPassword = hash
     });
-
-
-
-
 
 }
 
