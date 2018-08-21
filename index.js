@@ -4,7 +4,6 @@ const config = require('./config.js');
 const indexRoutes = require('./routes/indexRoutes');
 
 app.use('/', indexRoutes);
-
 // 404 route to go at the end of every route
 app.get('*', function (req, res) {
 	res.send({
