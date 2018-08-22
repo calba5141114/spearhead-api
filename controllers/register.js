@@ -42,7 +42,13 @@ function saveNewUser(req) {
         Photo: photo,
         Password: hashedPassword,
     });
-
+    
+    User.save(function (err) {
+        if(err) {
+            console.error('ERROR!');
+        };
+        console.log('sent');
+    })
 }
-
+    module.exports = saveNewUser;
 

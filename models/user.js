@@ -1,16 +1,24 @@
 const mongoose = require('mongoose');
 
-const userSchema = mongoose.schema ({
+var userSchema = mongoose.Schema ({
     name:{
         type: String,
         required: [true, "The name field is required"],
         unique: true
     },
+    
     email:{
         type: String,
         required: [true, "The Email field is required"],
         unique: true
     },
+
+    password:{
+        type: String,
+        required: [true, "The Password field is required"],
+        unique: true,
+    },
+
     bio:{
         type: String,
         required: [true, "The Bio field is required"],
@@ -30,7 +38,7 @@ const userSchema = mongoose.schema ({
 
     hometown: String,
 
-    photo: Image
+    photo: String,
 
 
 });

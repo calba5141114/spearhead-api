@@ -36,6 +36,9 @@ app.get('*', function (req, res) {
 });
 
 
+
+
+
 app.listen(config.port, () => {
 	console.log(`App running on port ${config.port}`);
 });
