@@ -4,50 +4,27 @@ const user = require('../models/user');
 
 function saveNewUser(req) {
 
-    let password = req.query.password;
-    let hashedPassword;
-    let name = req.query.name;
-    let email = req.query.email;
-    let bio = req.query.email;
-    let track = req.query.track;
-    let interests = req.query.interests;
-    let portfolio = req.query.portfolio;
-    let phone = req.query.phone;
-    let social = req.query.social;
-    let room = req.query.room;
-    let hometown = req.query.hometown
-    let photo = req.query.photo;
+    let hashedPassword = bcrypt.hashSync(req.query.password, 8);
 
-    bcrypt.hash(password, 10, (err, hash) => {
-        if (err) {
-            res.send({
-                message: err,
-            });
-        }
-        hashedPassword = hash
+    var User = new user({
+        password: hashedPassword,
+        name: req.query.name,
+        email: req.query.email,
+        bio: req.query.email,
+        track: req.query.track,
+        interests: req.query.interests,
+        portfolio: req.query.portfolio,
+        phone: req.query.phone,
+        social: req.query.social,
+        room : req.query.room,
+        hometown: req.query.hometown,
+        photo: req.query.photo,
     });
 
-    var User= new user({
-        Name: name,
-        Email: email,
-        Bio: bio,
-        Track: track,
-        Interests: interests,
-        Portfolio: portfolio,
-        Phone: phone,
-        Social: social,
-        Room: room,
-        Hometown: hometown,
-        Photo: photo,
-        Password: hashedPassword,
+    User.save((err, User) => {
+        if (err) return console.log(err);
+        console.log(User + '\n Successfully saved');
     });
-    
-    User.save(function (err) {
-        if(err) {
-            console.error(err);
-        };
-        console.log('sent');
-    })
 }
-    module.exports = saveNewUser;
+module.exports = saveNewUser;
 

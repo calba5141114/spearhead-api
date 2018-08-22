@@ -4,7 +4,7 @@ const saveNewUser = require('../controllers/register')
 
 registerRoutes.get('/register',(req,res)=>{
     res.send({
-        message: 'Use a post request',
+        message: 'Post request order name, email, password, bio, track, interest, portfolio, phone, social, room, hometown, photo',
     })
 })
 
