@@ -28,6 +28,21 @@ function saveNewUser(req) {
         hashedPassword = hash
     });
 
+    var User= new user({
+        Name: name,
+        Email: email,
+        Bio: bio,
+        Track: track,
+        Interests: interests,
+        Portfolio: portfolio,
+        Phone: phone,
+        Socail: social,
+        Room: room,
+        Hometown: hometown,
+        Photo: photo,
+        Password: hashedPassword,
+    });
+
 }
 
 
