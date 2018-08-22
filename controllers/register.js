@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const user = require('../models/user');
 
@@ -36,7 +35,7 @@ function saveNewUser(req) {
         Interests: interests,
         Portfolio: portfolio,
         Phone: phone,
-        Socail: social,
+        Social: social,
         Room: room,
         Hometown: hometown,
         Photo: photo,
@@ -45,7 +44,7 @@ function saveNewUser(req) {
     
     User.save(function (err) {
         if(err) {
-            console.error('ERROR!');
+            console.error(err);
         };
         console.log('sent');
     })

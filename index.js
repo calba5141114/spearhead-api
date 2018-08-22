@@ -27,6 +27,7 @@ app.use(bodyParser.urlencoded({
 
 
 app.use('/', indexRoutes);
+app.use('/', registerRoutes);
 // 404 route to go at the end of every route
 app.get('*', function (req, res) {
 	res.send({
