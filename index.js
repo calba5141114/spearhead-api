@@ -5,6 +5,7 @@ const indexRoutes = require('./routes/indexRoutes');
 const bodyParser = require('body-parser');
 const registerRoutes = require('./routes/registerRoutes');
 const mongoose = require('mongoose');
+const basicRoutes = require('./routes/basicRoutes');
 
 //needs cross origin header/ mongo.
 
@@ -28,6 +29,7 @@ app.use(bodyParser.urlencoded({
 
 app.use('/', indexRoutes);
 app.use('/', registerRoutes);
+app.use('/',basicRoutes);
 // 404 route to go at the end of every route
 app.get('*', function (req, res) {
 	res.send({

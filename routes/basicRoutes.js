@@ -1,5 +1,6 @@
 const express = require('express');
 const basicRoutes = express.Router();
+const savePost = require('../controllers/post');
 
 basicRoutes.get('/post', (req, res) => {
     res.send({
@@ -8,6 +9,7 @@ basicRoutes.get('/post', (req, res) => {
 });
 
 basicRoutes.post('/post', (req, res) => {
+    savePost(req);
     res.send({
         message: 'POST REQ SENT'
     })
