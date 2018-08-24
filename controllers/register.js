@@ -1,7 +1,6 @@
 const bcrypt = require('bcryptjs');
 const user = require('../models/user');
 
-
 function saveNewUser(req) {
 
     let hashedPassword = bcrypt.hashSync(req.query.password, 8);
@@ -16,7 +15,7 @@ function saveNewUser(req) {
         portfolio: req.query.portfolio,
         phone: req.query.phone,
         social: req.query.social,
-        room : req.query.room,
+        room: req.query.room,
         hometown: req.query.hometown,
         photo: req.query.photo,
     });

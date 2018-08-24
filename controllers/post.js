@@ -16,5 +16,4 @@ function savePost(req) {
     });
 }
 
-
 module.exports = savePost;

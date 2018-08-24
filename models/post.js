@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 const postSchema = mongoose.Schema({
-    title:{
+    title: {
         type: String,
         required: [true, "You need a title"],
-        max:[30,"Sorry your title can only be 30 characters"]
+        max: [30, "Sorry your title can only be 30 characters"]
     },
     text: {
         type: String,
@@ -13,6 +13,6 @@ const postSchema = mongoose.Schema({
     }
 });
 
-const post = mongoose.model('post',postSchema);
+const post = mongoose.model('post', postSchema);
 
 module.exports = post;
